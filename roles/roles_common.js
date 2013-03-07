@@ -175,6 +175,9 @@ Roles.userIsInRole = function (user, roles) {
   if (!_.isArray(roles)) {
     roles = [roles]
   }
+
+  // admin is always in the access list
+  roles.push('admin');
   
   if (!user) {
     return false
